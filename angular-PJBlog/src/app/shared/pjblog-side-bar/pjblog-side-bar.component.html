@@ -1,0 +1,11 @@
+<div class="sidebar-view-pjsubblog">
+    <div style="color:black; font-weight:bold">Browse PJ Blogs</div>
+    <hr/>
+    <span *ngFor = "let subblog of subblogs">
+        <span class="subblog-text"><a href="/view-subblog/{{subblog.id}}">{{subblog.name}}</a></span>
+        <hr/>
+    </span>
+    <div style="text-align:center" *ngIf= "displayAllView">
+    <a style="font-weight: bold;" routerLink = "/list-pjblogs">View All</a>
+    </div>
+</div>

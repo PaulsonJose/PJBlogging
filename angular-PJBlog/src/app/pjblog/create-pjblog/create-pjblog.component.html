@@ -1,0 +1,33 @@
+<div class="container">
+    <div class = "row">
+        <div class="create-pjblogging-continer">
+            <form class="post-form" [formGroup] = "createPjBlogForm" (ngSubmit) = "createBlog()">
+                <div class="form-group">
+                    <div class="create-pjblog-heading">Create Blog</div>
+                    <hr/>
+                    <input type="text" [formControlName] ="'title'" class="form-control" style="margin-top: 5px;" placeholder="Title">
+                    <textarea type="text" [formControlName]="'description'" style="width: 100%; margin-top: 5px;" 
+                    placeholder="Description"></textarea>
+                    <div>
+                        <div class="float-right" style="margin-top: 5px">
+                        <button (click)= "discard()" class="btnDiscard">Discard</button>
+                        <button type="submit" class="btnCreatePJBlog">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <div class="sidebar">
+                <h5 class="guidelines">For an efficient posting</h5>
+                <hr/>
+                <ul>
+                    <li>Write something useful</li>
+                    <hr/>
+                    <li>Please don't spam</li>
+                    <hr/>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

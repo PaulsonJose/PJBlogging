@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>PJ Blogging</title>
+    <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="jumbotron">
+<H1 class = "display-4">Something went wrong</H1>
+<p class = "lead">Technical Details</p>
+    <hr class = "my-4">
+<p th:text="'Error: ' + ${errMessage}"></p>
+<p class = "lead">
+    <a class="btn btn-primary btn-lg" href="/report" role="button">Report the Error</a>
+</p>
+</div>
+<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

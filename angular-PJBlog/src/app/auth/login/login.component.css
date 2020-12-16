@@ -1,0 +1,20 @@
+.login-section {
+    margin: 100px;
+}
+
+.login-failed, .register-success {
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    border: none;
+    width: 65%;
+    background-color: white;
+}
+
+.login-failed-text, .register-success-text {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: lighter;
+    color: rgb(235, 72, 186);
+}
+

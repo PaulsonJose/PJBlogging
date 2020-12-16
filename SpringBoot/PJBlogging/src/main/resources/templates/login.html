@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Credentials to PJ Blogging</title>
+</head>
+<body>
+<div class ="jumbotron">
+    <H1 class = "display-4">Please provide the login credentials:</H1>
+
+<form name = "f" th:action="@{/login}" method = "post">
+<fieldset>
+    <div th:if="${param.error}" class="alert alert-error">
+        Username and Password not matching.
+    </div>
+    <div th:if="${param.logout}" class="alert alert-success">
+        Logout successful!
+    </div>
+        <hr class = "my-4">
+
+    <label for="username">Username</label>
+    <input type = "text" id = "username" name = "username">
+    <label for = "password">Password</label>
+    <input type = "password" id = "password" name = "password">
+<p>
+    <div class="form-actions">
+        <button type = "submit" class="btn btn-primary btn-lg">Login</button>
+    </div>
+    </p>
+</fieldset>
+</form>
+</div>
+<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

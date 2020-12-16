@@ -1,0 +1,15 @@
+<div class="continer">
+    <div class="row">
+        <hr/>
+        <div class="col-md-9">
+            <H2>List of PJ Blogs</H2>
+            <ul>
+                <li *ngFor="let pjblog of pjblogs"><a routerLink ="/view-pjblog/{{pjblog.id}}">{{pjblog.name}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <app-side-bar></app-side-bar>
+        </div>
+    </div>
+</div>
