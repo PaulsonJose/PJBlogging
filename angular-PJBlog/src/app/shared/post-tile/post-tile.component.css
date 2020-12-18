@@ -16,6 +16,9 @@
     opacity: 1;
 }
 
+.username:hover {
+    cursor: pointer;
+}
 .btnComments:hover {
     opacity: 0.65;
     cursor: pointer;
