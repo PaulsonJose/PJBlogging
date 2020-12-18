@@ -10,7 +10,7 @@ import { UserDisplayModelConfig } from './user-display-model.config';
 export class UserDisplayModelComponent implements OnInit {
 
   @Input() public userModelConfig: UserDisplayModelConfig;
-  @ViewChild('app-user-display-model') private modalContant: TemplateRef<UserDisplayModelComponent>; 
+  @ViewChild('modal') private modalContant: TemplateRef<UserDisplayModelComponent>; 
   private modelRef: NgbModalRef;
 
   constructor(private modelService: NgbModal) { }
@@ -19,10 +19,8 @@ export class UserDisplayModelComponent implements OnInit {
   }
 
   open() : Promise<boolean> {
-    console.log("open method start");
     return new Promise<boolean>(resolve => {
     this.modelRef = this.modelService.open(this.modalContant);
-    console.log("open method done");
     this.modelRef.result.then();
   });
   }

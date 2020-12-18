@@ -1,5 +1,7 @@
 export interface UserDisplayModelConfig {
     modalTitle: string
+    commentLng?: number
+    postLen?: number
     dismissButtonLabel?: string
     closeButtonLabel?: string
     shouldClose?(): Promise<boolean> | boolean

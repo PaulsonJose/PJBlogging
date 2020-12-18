@@ -1,24 +1,27 @@
 <ng-template #modal>
   <div class="modal-header">
-    <h5 class="modal-title">{{ modalConfig.modalTitle }}</h5>
+    <h5 class="modal-title">{{ userModelConfig.modalTitle }}</h5>
   </div>
   <div class="modal-body">
-    <ng-content></ng-content>
+    <div>Total Posts: {{ userModelConfig.postLen }}</div>
+    <div>Total Comments: {{ userModelConfig.commentLng }}</div>
+    <ng-content>
+    </ng-content>
   </div>
   <div class="modal-footer">
     <button type="button"
             class="btn btn-outline-secondary"
             (click)="dismiss()"
-            *ngIf="modalConfig.hideDismissButton === undefined || !modalConfig.hideDismissButton()"
-            [disabled]="modalConfig.disableDismissButton !== undefined && modalConfig.disableDismissButton()">
-      {{ modalConfig.dismissButtonLabel }}
+            *ngIf="userModelConfig.hideDismissButton === undefined || !userModelConfig.hideDismissButton()"
+            [disabled]="userModelConfig.disableDismissButton !== undefined && userModelConfig.disableDismissButton()">
+      {{ userModelConfig.dismissButtonLabel }}
     </button>
     <button type="button"
             class="btn btn-outline-primary"
             (click)="close()"
-            *ngIf="modalConfig.hideCloseButton === undefined || !modalConfig.hideCloseButton()"
-            [disabled]="modalConfig.disableCloseButton !== undefined && modalConfig.disableCloseButton()">
-      {{ modalConfig.closeButtonLabel }}
+            *ngIf="userModelConfig.hideCloseButton === undefined || !userModelConfig.hideCloseButton()"
+            [disabled]="userModelConfig.disableCloseButton !== undefined && userModelConfig.disableCloseButton()">
+      {{ userModelConfig.closeButtonLabel }}
     </button>
   </div>
 </ng-template>

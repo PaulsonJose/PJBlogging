@@ -5,8 +5,11 @@
     <div class="col-md-11">
         <span class="pjsubblog-info">
             <span class="pjsubblog-text"><a class="posturl" routerLink="">{{post.subblogName}}</a></span>
-            <span> . Posted by <a class="username" (click) = "openModal()">{{post.userName}}</a></span>
+            <span> . Posted by <a class="username" (click) = "openModal(post.userName)">{{post.userName}}</a></span>
             <span> . {{post.duration}}</span>
+            <app-user-display-model #modal [userModelConfig]="modalConfig">
+                <!--  body of the modal  -->
+              </app-user-display-model>
         </span>
         <hr/>
         <div class="post-title">
@@ -26,6 +29,3 @@
     </div>
 </div>
 
-<app-user-display-model #modal [userModelConfig]="modalConfig">
-    <!--  body of the modal  -->
-  </app-user-display-model>
