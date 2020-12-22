@@ -5,6 +5,29 @@
         You can check your post and comment history below.
     </div>
     <hr/>
+    <div class="continer row">
+        <div class="col-md-2">
+            Upload Profile picture:
+        </div> 
+        <div class="col-md-4">
+            <input type="file" (change) = "onFileChanged($event)">
+        </div>
+        <div class="com-md-3">
+            <input type="button" (click) = "onUpload()" value="upload">
+        </div>
+        <div class="col-md-4">
+            <div *ngIf = retrivedImage>
+                <img [src]="retrivedImage">
+            </div>
+        </div>
+    </div>
+    <div class="continer row">
+        <div class="com-md-12">
+            <div *ngIf = message>{{message}}</div>
+        </div>
+    </div>
+
+    <hr/>
     <div>
         Your Posts:
     </div>

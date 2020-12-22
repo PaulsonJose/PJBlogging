@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from'@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from'@angular/common/http';
 import { SignupRequestPayload } from '../sign-up/signup-request.payload';
 import { EMPTY, Observable, throwError } from 'rxjs';
 import { LocalStorageService } from 'ngx-webstorage';
@@ -118,5 +118,14 @@ export class AuthService {
     this.localStorage.clear('authenticationTocken');
     this.localStorage.clear('expiresAt');
     this.localStorage.clear('username');
+  }
+
+  uploadImage(uploadImageData: FormData):Observable<HttpResponse<any>>{
+    return this.http.post<HttpResponse<any>>('http://localhost:8081/image/upload', uploadImageData, {observe: 'response'});
+  }
+
+  getImage(fileName: string): Observable<any> {
+      return this.http.get<any>('http://localhost:8081/image/get/' + fileName);
+
   }
 }
