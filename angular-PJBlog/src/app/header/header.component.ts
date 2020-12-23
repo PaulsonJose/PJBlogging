@@ -11,11 +11,18 @@ export class HeaderComponent implements OnInit {
 
   userName: string;
   isLoggedIn: boolean;
+
+  retrivedImage: any;
+  retriveResponse: any;
+  base64Data: any;
+  imageAvbl: boolean;
+
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.userName = this.authService.getUsername();
     this.isLoggedIn = this.authService.isLoggedin();
+    this.getImage();
   }
 
   goToUserProfile() {
@@ -27,5 +34,17 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/').then(()=> {
       window.location.reload();
     })
+  }
+  getImage() {
+    this.authService.getImage(this.authService.getUsername()).subscribe(response => {
+    this.retriveResponse = response;  
+    this.base64Data = this.retriveResponse.picByte;
+    this.retrivedImage = 'data:image/jpeg;base64,' + this.base64Data;
+    this.imageAvbl = true
+    console.log("response received!");
+    },
+    error => {
+      this.imageAvbl = false;
+    });
   }
 }

@@ -121,11 +121,11 @@ export class AuthService {
   }
 
   uploadImage(uploadImageData: FormData):Observable<HttpResponse<any>>{
-    return this.http.post<HttpResponse<any>>('http://localhost:8081/image/upload', uploadImageData, {observe: 'response'});
+    return this.http.post<HttpResponse<any>>('http://localhost:8081/image/upload', uploadImageData);
   }
 
-  getImage(fileName: string): Observable<any> {
-      return this.http.get<any>('http://localhost:8081/image/get/' + fileName);
+  getImage(userName: string): Observable<any> {
+      return this.http.get<any>('http://localhost:8081/image/read/' + userName);
 
   }
 }

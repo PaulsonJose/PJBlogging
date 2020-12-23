@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { throwError } from 'rxjs';
@@ -25,6 +24,7 @@ export class UserProfileComponent implements OnInit {
   retrivedImage: any;
   retriveResponse: any;
   base64Data: any;
+  imageAvbl: boolean;
 
   constructor(private activatedRoute: ActivatedRoute, private postService: PostService,
     private commentService: CommentService, private authService: AuthService) { 
@@ -48,6 +48,7 @@ export class UserProfileComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.getImage();
   }
 
   public onFileChanged(event) {
@@ -55,11 +56,12 @@ export class UserProfileComponent implements OnInit {
   }
 
   onUpload(){
-    console.log(this.selectedFile);
+    console.log("uploading: " + this.selectedFile.name);
     const uploadImageData = new FormData();
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
     this.authService.uploadImage(uploadImageData).subscribe(
       response => {
+        console.log(response);
         this.message = "Upload successful";
       },
       error => {
@@ -70,10 +72,14 @@ export class UserProfileComponent implements OnInit {
   }
 
   getImage() {
-    this.authService.getImage(this.selectedFile.name).subscribe(response => {
+    this.authService.getImage(this.authService.getUsername()).subscribe(response => {
     this.retriveResponse = response;  
     this.base64Data = this.retriveResponse.picByte;
     this.retrivedImage = 'data:image/jpeg;base64,' + this.base64Data;
+    console.log("response received!");
+    },
+    error => {
+      console.log("Image not available!");
     });
   }
 
