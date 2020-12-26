@@ -63,6 +63,7 @@ export class UserProfileComponent implements OnInit {
       response => {
         console.log(response);
         this.message = "Upload successful";
+        this.getImage();
       },
       error => {
         console.log(error);
