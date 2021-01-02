@@ -55,4 +55,8 @@ public class SubblogService {
         subblog.orElseThrow(()-> new SpringPJBloggingException("Sorry, Subblog not found."));
         return subblogMapper.mapSubblogDto(subblog.get());
     }
+
+    public List<SubblogDto> getSubblogByUser(String username) {
+        return subblogRepository.findByUser(username).stream().map(subblogMapper:: mapSubblogDto).collect(Collectors.toList());
+    }
 }

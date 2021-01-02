@@ -29,4 +29,9 @@ public class SubblogController {
         return subblogService.getSubblog(id);
     }
 
+    @GetMapping("/by-user/{username}")
+    public List<SubblogDto> getSubblogByUser (@PathVariable String username) {
+        return subblogService.getSubblogByUser(username);
+    }
+
 }

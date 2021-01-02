@@ -11,4 +11,5 @@ public interface SubblogRepository extends JpaRepository<Subblog, Long> {
 
 Optional <Subblog> findById(Long id);
 Optional <Subblog> findByName(String name);
+Optional <Subblog> findByUser(String user);
 }
