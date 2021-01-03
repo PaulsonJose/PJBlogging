@@ -61,4 +61,8 @@ export class CreatePostComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 
+  getSubblogDetails(subblogName: String){
+    console.log(subblogName);
+  }
+
 }
