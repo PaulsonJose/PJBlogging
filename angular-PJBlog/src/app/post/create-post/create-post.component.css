@@ -75,3 +75,13 @@
     width: 288px;
     height: 34px;
   }
+
+  .blogDetails {
+    width: 350px;
+    opacity: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #0079D3;
+    -ms-flex: 1;
+    flex: 1;
+  }

@@ -13,3 +13,6 @@
     margin-bottom: 10px;
 }
 
+.subblogLink:hover {
+    cursor: pointer;
+}

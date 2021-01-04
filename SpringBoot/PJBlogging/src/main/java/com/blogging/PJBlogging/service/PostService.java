@@ -33,8 +33,8 @@ public class PostService {
     private final UserRepository userRepository;
 
     public PostResponse create(PostRequest postRequest) {
-        Subblog subblog = subblogRepository.findByName(postRequest.getSubblogName())
-                .orElseThrow(()->new SpringPJBloggingException("Blog not found: " + postRequest.getSubblogName()));
+        Subblog subblog = subblogRepository.findById(postRequest.getSubblogId())
+                .orElseThrow(()->new SpringPJBloggingException("Blog not found: " + postRequest.getSubblogId()));
         Post post= postRepository.save(postMapper.map(postRequest,subblog,authService.getCurrentUser()));
         return postMapper.mapToDto(postRepository.findById(post.getPost_Id()).get());
     }

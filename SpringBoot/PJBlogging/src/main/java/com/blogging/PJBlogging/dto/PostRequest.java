@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 public class PostRequest {
     private Long post_Id;
-    private String subblogName;
+    private Long subblogId;
     private String post_Name;
     private String url;
     private String description;

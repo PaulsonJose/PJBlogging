@@ -10,9 +10,9 @@
                     <hr/>
                     <input type="text" [formControlName] ="'postName'" class="form-control" style="margin-top: 5px;" placeholder="Title">
                     <input type="text" [formControlName] = "'url'" class="form-control" style="margin-top: 5px;" placeholder="URL">
-                    <select class="form-control" style="margin-top: 10px;" [formControlName] = "'pjsubblogname'" (change) = "getSubblogDetails($event.target.value)">
-                    <option value="" selected disabled>Select PJ Blog</option>
-                    <option *ngFor = "let pjblog of pjblogs" [value] = "pjblog.id">{{pjblog.name}}</option>
+                    <select class="form-control" style="margin-top: 10px;" [formControlName] = "'pjsubblogname'" (change) = "getSubblogDetails($event.target.value)" [(ngModel)] = "selectedSubblogId">
+                        <option value="0" disabled>Select PJ Blog</option>
+                        <option *ngFor = "let pjblog of pjblogs" [value] = "pjblog.id">{{pjblog.name}}</option>
                     </select>
                     <editor [formControlName] = "'description'" [init] = "{
                         height : 500,
@@ -34,6 +34,14 @@
             </form>
         </div>
         <div class="col-md-3">
+            <p style = "line-height: 1.4;"></p>
+            <div *ngIf = "blogFound; else elseBlock"> 
+                <label class="create-post-heading" id = "blogHeading">Description of the PJBlog ({{pjblog.name}})</label>
+                <div></div>
+                <label class="blogDetails" id = "blogDeatils">{{pjblog.description}}</label>
+                <label class="blogDetails" id = "blogPostCount">Post Count: {{pjblog.postCount}}</label>
+            </div>
+            <ng-template #elseBlock>Waiting on Blog details. Please select one from the dropdown list if not already done.</ng-template>
            <!-- <guidlines></guidlines>
             <about></about>  -->
         </div>

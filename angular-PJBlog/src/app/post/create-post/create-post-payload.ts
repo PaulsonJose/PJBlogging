@@ -1,6 +1,6 @@
 export class CreatePostPayload{
     post_Name: string;
-    subblogName?: string;
+    subblogId?: number;
     url?: string;
     description: string;
 }

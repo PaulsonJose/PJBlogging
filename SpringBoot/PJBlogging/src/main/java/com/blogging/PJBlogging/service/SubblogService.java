@@ -49,7 +49,7 @@ public class SubblogService {
                 .user(authService.getCurrentUser())
                 .createdDate(Instant.now()).build();
     }*/
-
+    @Transactional
     public SubblogDto getSubblog(Long id) {
         Optional<Subblog> subblog = subblogRepository.findById(id);
         subblog.orElseThrow(()-> new SpringPJBloggingException("Sorry, Subblog not found."));

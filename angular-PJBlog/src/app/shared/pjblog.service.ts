@@ -18,4 +18,8 @@ export class PjblogService {
       return this.http.post<PjblogModel>('http://localhost:8081/api/pjsubblog', pjBlogModel);
   }
 
+  getPJBlog(pjblogId: String): Observable<PjblogModel> {
+    return this.http.get<PjblogModel>('http://localhost:8081/api/pjsubblog/' + pjblogId);
+  }
+
 }
