@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd14742a-a4e0-4958-8ca4-4128f9da106a" name="Default Changelist" comment="" />
+    <list default="true" id="bd14742a-a4e0-4958-8ca4-4128f9da106a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PJBlogging/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PJBlogging/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,13 +16,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1mYbWHqOn8oAePP7nIT7ihQQwge" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,6 +23,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
@@ -59,27 +56,5 @@
       <updated>1609673536630</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1609796905626">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1609796905626" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1609796905626">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1609796905626" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1609796905626">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1609796905626" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1609796905626">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1609796905626" />
-    <state x="391" y="90" key="new project wizard" timestamp="1609687859563">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="391" y="90" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1609687859563" />
   </component>
 </project>
