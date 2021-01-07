@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/schematics": "^11.0.6",
     "@angular/animations": "~10.2.0",
     "@angular/common": "~10.2.0",
     "@angular/compiler": "~10.2.0",
@@ -29,7 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1002.0",
-    "@angular/cli": "~10.2.0",
+    "@angular/cli": "^11.0.6",
     "@angular/compiler-cli": "~10.2.0",
     "@angular/localize": "^10.2.3",
     "@fortawesome/angular-fontawesome": "0.8.0",
