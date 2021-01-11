@@ -27,3 +27,5 @@ DataBase: PostgreSQL 4.26
 Sourse Code Editors: 
     : Visual Studio Code (Angular)
     : Intellij IDEA (Spring Boot)
+
+![Alt text](/imgs/HomeScreen.png?raw=true "Home Screen")
