@@ -29,3 +29,4 @@ Sourse Code Editors:
     : Intellij IDEA (Spring Boot)
 
 ![Alt text](/imgs/HomeScreen.png?raw=true "Home Screen")
+![Alt text](/imgs/user_profile.png?raw=true "User Profile Screen")
