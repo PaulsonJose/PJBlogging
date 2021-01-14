@@ -23,6 +23,12 @@ export class HeaderComponent implements OnInit {
     this.userName = this.authService.getUsername();
     this.isLoggedIn = this.authService.isLoggedin();
     this.getImage();
+    this.authService.events.forEach(event => {
+      console.log("Event triggered: " + event);
+      if(event === "updateHeaderImage") {
+        this.getImage();
+      }
+    });
   }
 
   goToUserProfile() {
@@ -41,7 +47,7 @@ export class HeaderComponent implements OnInit {
     this.base64Data = this.retriveResponse.picByte;
     this.retrivedImage = 'data:image/jpeg;base64,' + this.base64Data;
     this.imageAvbl = true
-    console.log("response received!");
+    console.log("Header Component: Image response received!");
     },
     error => {
       this.imageAvbl = false;

@@ -78,6 +78,7 @@ export class UserProfileComponent implements OnInit {
     this.base64Data = this.retriveResponse.picByte;
     this.retrivedImage = 'data:image/jpeg;base64,' + this.base64Data;
     console.log("response received!");
+    this.authService.newEvent('updateHeaderImage');
     },
     error => {
       console.log("Image not available!");

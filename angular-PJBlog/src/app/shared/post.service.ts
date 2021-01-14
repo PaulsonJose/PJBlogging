@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CreatePostPayload } from '../post/create-post/create-post-payload';
 import { PostModel } from './post-model';
-import { VoteModel } from './vote-model';
 
 @Injectable({
   providedIn: 'root'

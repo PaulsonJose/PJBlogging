@@ -27,6 +27,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { ViewPostComponent } from './post/view-post/view-post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserDisplayModelComponent } from './shared/user-display-model/user-display-model.component';
+import {WebcamModule} from 'ngx-webcam';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { UserDisplayModelComponent } from './shared/user-display-model/user-disp
     ToastrModule.forRoot(),
     FontAwesomeModule ,
     EditorModule,
-    NgbModule
+    NgbModule,
+    WebcamModule
    ],
   providers: [
     {provide: HTTP_INTERCEPTORS,
