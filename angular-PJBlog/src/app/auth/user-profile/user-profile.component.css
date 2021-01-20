@@ -5,3 +5,12 @@
     max-height: 100px;
     max-width: 100px;
 }
+.snapshot {
+    text-align: center;
+  }
+
+.snapshot  img {
+    float: right;
+  max-width: 200px;
+  max-height: 200px;
+}

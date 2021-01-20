@@ -9,20 +9,23 @@
         <div class="col-md-2">
             Upload Profile picture:
         </div> 
-        <div class="col-md-4">
-            <input type="file" (change) = "onFileChanged($event)">
+        <div class="col-md-3">
+            <input #file type="file" id = "fileSelector" accept='image/*' (change) = "onFileChanged(file.files)">
+            or
         </div>
-        <div class="com-md-3">
+        
+        <div class="col-md-1">
+            <input type="button" (click) = "startCamWindow(content)" value="Use Camera">
+        </div>
+        <div class="col-md-2" *ngIf = retrivedImage>
+                <img id = "preview" alt = "Preview not generated" title = "Preview" class="account-icon" [src]="retrivedImage">
+        </div>
+        <div class="col-md-1">
             <input type="button" (click) = "onUpload()" value="upload">
-        </div>
-        <div class="col-md-4">
-            <div *ngIf = retrivedImage>
-                <img class="account-icon" [src]="retrivedImage">
-            </div>
         </div>
     </div>
     <div class="continer row">
-        <div class="com-md-12">
+        <div class="col-md-3">
             <div *ngIf = message>{{message}}</div>
         </div>
     </div>
@@ -49,3 +52,52 @@
         <hr/>
     </div>
 </div>
+
+
+
+<ng-template #content let-modal> 
+    <div class="modal-header"> 
+        <h4 class="modal-title" 
+            id="modal-basic-title"> 
+            Capture image for Profile Picture
+        </h4> 
+        <button type="button" class="close"
+                aria-label="Close" (click)= 
+                "modal.dismiss('Cross click')"> 
+  
+            <span aria-hidden="true"> 
+                × 
+            </span> 
+        </button> 
+    </div> 
+    <div class="modal-body"> 
+ 
+                <webcam [height] = "500" [width] = "465" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" 
+                [switchCamera] = "nextWebcamObservable" 
+                [imageQuality] = "1" (cameraSwitched)="cameraWasSwitched($event)" (initError)="handleInitError($event)"></webcam>
+
+                <div >
+                    <div>Selected Device: {{mediaDeviceInfo[mediaDeviceIndex].label}}</div>
+                </div>
+    </div> 
+    <div class="modal-footer"> 
+        <button class="btn btn-outline-dark" (click)="showNextWebcam()" [disabled]="!multipleWebcamsAvailable">Next Webcam</button>
+        <button class="btn btn-outline-dark" (click)="triggerSnapshot();">Take A Snapshot</button>
+        <button type="button" 
+            class="btn btn-outline-dark" *ngIf = "webcamImage"
+            (click)="preview_bild();modal.close('Apply')"> 
+            Apply 
+        </button>
+        <button type="button" 
+            class="btn btn-outline-dark" 
+            (click)="modal.close('Cancelled')"> 
+            Cancel 
+        </button> 
+        <div class="snapshot" *ngIf = "webcamImage">
+            <figure>
+                <img [src] = "webcamImage.imageAsDataUrl"/>
+                <figcaption>Preview</figcaption>
+            </figure>
+        </div>
+    </div> 
+</ng-template>
